@@ -256,6 +256,16 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entity_CodeFirst\Entity_CodeFirst.csproj">
+      <Project>{8D082CC9-5996-4400-A5AE-5DA36B8C682F}</Project>
+      <Name>Entity_CodeFirst</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{7701791e-0221-4a8b-beef-f7cf01d96ff3}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
