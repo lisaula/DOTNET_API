@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Entity_CodeFirst.models
@@ -11,8 +13,11 @@ namespace Entity_CodeFirst.models
 
     public class Enrollment
     {
+        [Key]
         public int EnrollmentID { get; set; }
+        [ForeignKey("Course")]
         public int CourseID { get; set; }
+        [ForeignKey("Student")]
         public int StudentID { get; set; }
         public Grade? Grade { get; set; }
 
