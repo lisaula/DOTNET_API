@@ -12,9 +12,9 @@ namespace Services.Repositories
     {
         private SchoolContext db;
 
-        public StudentRepository(SchoolContext dbContext)
+        public StudentRepository()
         {
-            db = dbContext;
+            db = new SchoolContext();
         }
         public void DeleteEntity(int id)
         {

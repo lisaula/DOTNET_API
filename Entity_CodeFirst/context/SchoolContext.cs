@@ -11,11 +11,18 @@ namespace Entity_CodeFirst.context
 {
     public class SchoolContext : DbContext
     {
+        private string connStr;
+
         public DbSet<Student> Students { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Course> Courses { get; set; }
 
         public SchoolContext() : base("name=SchoolContext") {}
+
+        public SchoolContext(string connStr)
+        {
+            this.connStr = connStr;
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

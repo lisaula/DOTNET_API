@@ -33,7 +33,13 @@ namespace WebAPI.Controllers
         {
             var query = studentRepository.GelAllEntities();
             var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent(JsonConvert.SerializeObject(query.ToList()));
+            string json = JsonConvert.SerializeObject(query.ToList(), Formatting.Indented,
+                new JsonSerializerSettings
+                {
+                    PreserveReferencesHandling = PreserveReferencesHandling.None,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            response.Content = new StringContent(json);
             return response;
         }
 
